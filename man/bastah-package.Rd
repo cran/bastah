@@ -9,7 +9,8 @@
 }
 
 \usage{
-bastah (X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores = 4, verbose = FALSE)
+bastah (X, y, categorical = FALSE, family = "gaussian", mcorr = "holm",
+N = 10000, ncores = 4, verbose = FALSE)
 }
 \arguments{
   \item{X}{
@@ -17,6 +18,9 @@ bastah (X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores = 4, verbos
   }
   \item{y}{
     A numeric response variable of length n.
+  }
+  \item{categorical}{
+    Type of data in the design matrix. (default = FALSE)
   }
   \item{family}{
     Family of the response variable. It should be either "gaussian" or "binomial". (default = "gaussian")

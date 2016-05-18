@@ -1,4 +1,4 @@
-bastah <- function(X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores = 4, verbose = FALSE) {
+bastah <- function(X, y, categorical = FALSE, family = "gaussian", mcorr = "holm", N = 10000, ncores = 4, verbose = FALSE) {
    # Removing variables with a constant value by finding levels in the selected data
    n = nrow(X);
    p = ncol(X);
@@ -18,7 +18,7 @@ bastah <- function(X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores 
       print(paste(Sys.time(),"Pre-processing data"));
    }
    # Normalizing data using ridge regression
-   if(family == "binomial"){
+   if(categorical){
       X = scale(X, center = TRUE, scale = FALSE);
       D = rep(0, p);
       for(i in 1:p){
@@ -28,8 +28,6 @@ bastah <- function(X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores 
       X = X %*% D;
       rm(D);
       gc();
-   } else if(family != "gaussian"){
-      stop("Invalid family for response variable");
    }
 
    if(verbose){
@@ -63,8 +61,10 @@ bastah <- function(X, y, family = "gaussian", mcorr = "holm", N = 10000, ncores 
       sigma = 1;
       rm(fitnet, betahat, diagW, glmnetfit, netlambda.min, netpred, pihat, W, xl);
       gc();
-   } else {
+   } else if(family == "gaussian"){
       sigma = NULL;
+   } else {
+      stop("Invalid family for response variable");
    }
 
    ## center the columns the response to get rid of the intercept
