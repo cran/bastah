@@ -1,8 +1,8 @@
 Package: bastah
 Type: Package
 Title: Big Data Statistical Analysis for High-Dimensional Models
-Version: 1.0.5
-Date: 2016-05-18
+Version: 1.0.7
+Date: 2016-05-22
 Author: Ehsan Ullah [aut, cre], Reda Rawi [aut], Lukas Meier [ctb], Ruben Dezeure [ctb], Nicolai Meinshausen [ctb], Martin Maechler [ctb], Peter Buehlmann [ctb], Tingni Sun [ctb]
 Authors@R: c(person(given = "Ehsan", family = "Ullah", role = c("aut", "cre"), email = "eullah@qf.org.qa"),
    person(given = "Reda", family = "Rawi", role = c("aut")),
@@ -21,5 +21,5 @@ Enhances: doMC, rPython
 Imports: BigQuic, foreach, glmnet, lars, MASS, stats, Matrix, scalreg
 Depends: R (>= 3.2.0)
 NeedsCompilation: no
-Packaged: 2016-05-18 07:22:48 UTC; ehsan
-Date/Publication: 2016-05-18 10:38:25
+Packaged: 2016-06-02 12:26:45 UTC; ehsan
+Date/Publication: 2016-06-02 14:44:01

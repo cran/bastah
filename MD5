@@ -1,9 +1,9 @@
-17be0c3777be0cb12d217a35ec4ce791 *DESCRIPTION
+2daa533846e4e9f5358838eb62c54721 *DESCRIPTION
 3567330f1f57590c72d231a54c64e2a7 *NAMESPACE
-b3d0d5c121d84e25847271e768314a3e *R/bastah.R
+acedbad41e8133ff3f7e8620e0d41c4d *R/bastah.R
 9606cad8347c42ecca617f289a9b8bb3 *R/bastah.helpers.R
 aed01f680cd34af7d627d1f46e3dccec *R/bastah.scalreg.R
-8465655ab801a47b7faa2ccde1c71e5b *build/partial.rdb
+c33d40120af20decb586a26821cd4ba2 *build/partial.rdb
 b678c3d0e016b7969e2ec50f7a49cc8d *data/datalist
 ff2cd9e707ad5980a338c10465af4f0d *data/snps.RData
 53cee5703449c2cef4c43fb127dce09d *man/bastah-package.Rd

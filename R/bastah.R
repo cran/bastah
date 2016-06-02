@@ -17,6 +17,9 @@ bastah <- function(X, y, categorical = FALSE, family = "gaussian", mcorr = "holm
    if(verbose){
       print(paste(Sys.time(),"Pre-processing data"));
    }
+   # Ensuring X is a matrix and y is a vector
+   X = matrix(as.numeric(unlist(X)),nrow=nrow(X));
+   y = as.vector(y);
    # Normalizing data using ridge regression
    if(categorical){
       X = scale(X, center = TRUE, scale = FALSE);
@@ -89,8 +92,8 @@ bastah <- function(X, y, categorical = FALSE, family = "gaussian", mcorr = "holm
    gc();
 
    # Rescale the Z appropriately such that such that t(Zj) Xj/n = 1 for all j
-   scaleZ = vector(mode = "numeric", n);
-   for(i in 1:ncol(X)){
+   scaleZ = vector(mode = "numeric", p);
+   for(i in 1:p){
       scaleZ[i] = (Z[, i] %*% X[, i]) / n;
    }
    Z = scale(Z, center = FALSE, scale = scaleZ);
@@ -157,7 +160,6 @@ bastah <- function(X, y, categorical = FALSE, family = "gaussian", mcorr = "holm
               bhat        = bproj,
               selection   = selection
    );
-   names(out$pval) = names(out$pval.corr) = names(out$bhat) = names(out$betahat) = colnames(X);
    class(out) <- "bastah";
    if(verbose){
       print(paste(Sys.time(),"Done"));
